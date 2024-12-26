@@ -111,10 +111,6 @@ auto makeUpdatedStatus(
       [](auto && vertex) { return not std::isnan(vertex.time); });
   };
 
-    auto is_breaking_waypoint = [&]() {
-    return first_waypoint_with_arrival_time_specified() >=
-           std::prev(polyline_trajectory.shape.vertices.end());
-  };
 
   if (polyline_trajectory.shape.vertices.empty()) {
     return std::nullopt;
